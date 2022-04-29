@@ -1,0 +1,38 @@
+INPUT:
+-Insieme degli esami(ESAMI)
+-#  crediti (m)
+
+OUTPUT: 
+-sottoinsieme di esami tale che:
+	*somma esami.crediti == m
+	*media esami.voto sia massima
+	
+	APPROCCIO 1
+	ad ogni livello l della ricorsione, inserisco un esame in parziale. 
+	devo decidere quale --> li provo tutti
+	
+	SOLUZIONE PARZIALE = ad ogni livello l, parziale sarà un sottoinsieme di 
+	esattamente l esami
+	
+	GENERAZIONE SOTTOPROBLEMI = aggiungere un nuovo esame a parziale, tra quelli che non 
+	ho ancora aggiunto
+	parziale = parziale +esami(i)
+	
+
+	CASI TERMINALI
+	 quando l=n
+	parziale.sommacrediti == m
+	ma se parziale.sommacrediti() >m
+	
+	
+	
+APPROCCIO 2   complessità 2^N
+generare i sottoproblemi uno per volta scorrendo l'insieme di 
+esami di partenza in ordine decidendo per ogni esame:
+se debba essere inserito
+se non debba esser inserito
+
+livello della ricorsione coincide con esame da considerare
+
+L=0-->2 scelte possibili
+...
